@@ -12,7 +12,7 @@ public class Weapon : ScriptableObject
     [SerializeField] private float shootDistance;
    //Player1 player1;
    [SerializeField] Bullet bulletReference;
-    [SerializeField] private bool exploding = false;
+   // [SerializeField] private bool exploding = false;
 
     //every 2seconds spawn bullet while OnClick use coroutine or timer
     //the other 2 enemies

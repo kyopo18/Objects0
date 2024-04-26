@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private RapidFireEnemy rapidFireEnemyPrefab;
     [SerializeField] private KamikazeEnemy kamikazeEnemyPrefab;
     //[SerializeField] private AccurateEnemy accurateEnemyPrefab;
-    [SerializeField] private int enemyCount;
+   // [SerializeField] private int enemyCount;
     [SerializeField]
     private string[] enemyTypes = { "KamikazeEnemy", "RapidFireEnemy", "AccurateEnemy",
         "KamikazeEnemy", "RapidFireEnemy", "KamikazeEnemy" };
