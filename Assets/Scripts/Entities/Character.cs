@@ -1,24 +1,23 @@
 
+using System.Dynamic;
 using UnityEngine;
 
 
-//Enemies and Players will derive from this class because all of them will have
+//Enemies and Players will derive from this class
 public abstract class Character : MonoBehaviour, IDamageable
 {
     [SerializeField] private float speed;
-    private int strength;
     protected Health healthPoints;
-
+    [SerializeField] protected Weapon weapon;
+    [SerializeField] protected int maxHealth;
     [SerializeField] protected Rigidbody2D rigidBody;
 
     protected virtual void Start()
     {
-        healthPoints = new Health(5);
+        healthPoints = new Health(maxHealth);
+        weapon = ScriptableObject.CreateInstance<Weapon>();
     }
-
-  
-
-public abstract void Attack(); // a virtual method means that it can be overrided
+protected abstract void Attack(); // a virtual method means that it can be overridden
 
     public abstract void Die();
 
