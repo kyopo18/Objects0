@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
     
     public float bulletSpeed;
     private string targetTag;
-    private int damage = 1;
+    private int damage;
 
     private void Start()
     {

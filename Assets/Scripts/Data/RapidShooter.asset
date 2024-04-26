@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: RapidTorpedo
   icon: {fileID: 0}
-  shootDamage: 0
+  shootDamage: 1
   shootSpeed: 5
   shootAccuracy: 0
   shootDistance: 0

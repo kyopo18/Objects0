@@ -6,40 +6,16 @@ public class Player : Character
 {
     //[SerializeField] private Transform aim;
     //[SerializeField] private Bullet1 bulletPrefab;
-    [SerializeField] private Weapon playerWeapon;
 
     protected override void Start()
     {
-        
-        rigidBody = GetComponent<Rigidbody2D>();
-        healthPoints = new Health(4);
-        healthPoints.OnHealthChanged.AddListener(ChangedHealth);
-        //playerWeapon = new Weapon1(bulletPrefab);
-    }
-
-    
-
-    public void ChangedHealth(int health)
-    {
-
-        Debug.Log("LIFE HAS CHANGED TO " + health);
-        if (health <= 0)
-        {
-            Die();
-        }
-
-    }
-
-    public override void SetWeapon(Weapon newWeapon)
-    {
-        base.SetWeapon(newWeapon);
-        playerWeapon = newWeapon;
+        base.Start();
     }
     public override void Attack() // base attack
     {
         
         //playerWeapon.ShootMe(aim.position, aim.rotation, "Enemy"); // Accurate Aim add aim and bulletspawn empties to player
-        playerWeapon.ShootMe(transform.position, transform.rotation, "Enemy"); //OTHER WORKING LINE for bullet inside player
+        weapon.ShootMe(transform, "Enemy"); //OTHER WORKING LINE for bullet inside player
     }
 
     //public override void Attack(1) // Highly accurate attack
@@ -53,11 +29,6 @@ public class Player : Character
         GameManager.singleton.EndGame();
 
         Destroy(gameObject);
-    }
-
-    public override void Move(Vector2 direction, float angle)
-    {
-        base.Move(direction, angle);
     }
 
     public override void ReceiveDamage()

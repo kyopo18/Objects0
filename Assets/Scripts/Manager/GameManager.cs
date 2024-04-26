@@ -59,12 +59,12 @@ public class GameManager : MonoBehaviour
             if (enemyTypes[i] == "RapidFireEnemy1")
             {
                 RapidFireEnemy enemy = Instantiate(rapidFireEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);
-                enemy.SetUpEnemy(1);
+                enemy.SetUpEnemy();
             }
             if (enemyTypes[i] == "Kamikaze1")
             {
                 KamikazeEnemy enemy = Instantiate(kamikazeEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);// enemy = new KamikazeEnemy();
-                enemy.SetUpEnemy(1);
+                enemy.SetUpEnemy();
             }
             //if (enemyTypes[i] == "AccurateEnemy")
             //{
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
             //XSetUpEnemy();
             Debug.Log(randomSpawnPoint.position);
             Enemy enemy = Instantiate(enemyPrefab, randomSpawnPoint.position, Quaternion.identity);
-            enemy.SetUpEnemy(1);
+            enemy.SetUpEnemy();
             //Enemy enemyx = Instantiate(rapidFireEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);
             //enemyx.SetUpEnemy(1); 
             //Enemy enemyy = Instantiate(kamikazeEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);
