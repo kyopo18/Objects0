@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class RapidFireEnemy : Enemy
 {
-    public RapidFireEnemy(string enemyName) : base(enemyName)
+    public RapidFireEnemy()
     {
     }
 
     protected override void Start()
     {
         base.Start();
-        target = FindObjectOfType<Player>();
-        healthPoints.OnHealthChanged.AddListener(ChangedHealth);
-        enemyWeapon = new Weapon(); // Activity Diagram : set weapon
     }
 
     //override attack and shoot from enemy

@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
     IEnumerator SpawnEnemy() //Random.Range(0, spawnPoints.Length)
     {
 
-        enemyCount = 0;
+      //  enemyCount = 0;
         while (true)
         {
 

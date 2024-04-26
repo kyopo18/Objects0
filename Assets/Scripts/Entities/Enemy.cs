@@ -22,7 +22,7 @@ public class Enemy : Character
         target = FindObjectOfType<Player>();
         healthPoints.OnHealthChanged.AddListener(ChangedHealth);
     }
-    protected override void Attack() 
+    public override void Attack() 
     { 
     }
         public void ChangedHealth(int health)

@@ -17,7 +17,7 @@ public abstract class Character : MonoBehaviour, IDamageable
         healthPoints = new Health(maxHealth);
         weapon = ScriptableObject.CreateInstance<Weapon>();
     }
-protected abstract void Attack(); // a virtual method means that it can be overridden
+public abstract void Attack(); // a virtual method means that it can be overridden
 
     public abstract void Die();
 
