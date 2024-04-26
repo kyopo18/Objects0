@@ -16,8 +16,17 @@ public abstract class Character : MonoBehaviour, IDamageable
     {
         healthPoints = new Health(maxHealth);
         weapon = ScriptableObject.CreateInstance<Weapon>();
+        healthPoints.OnHealthChanged.AddListener(ChangedHealth);
     }
-public abstract void Attack(); // a virtual method means that it can be overridden
+    public void ChangedHealth(int health)
+    {
+        Debug.Log("LIFE HAS CHANGED TO " + health);
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+    public abstract void Attack(); // a virtual method means that it can be overridden
 
     public abstract void Die();
 
