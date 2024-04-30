@@ -41,7 +41,7 @@ public class Weapon : ScriptableObject
     } //KVN H!!!!!!!!!!!!!!!!!!!
 
     */
-  public void WeaponSetup(Bullet bulletReference)
+  public virtual void WeaponSetup(Bullet bulletReference)
     {
         this.bulletReference = bulletReference;
     }

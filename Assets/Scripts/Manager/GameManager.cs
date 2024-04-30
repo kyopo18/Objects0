@@ -56,12 +56,12 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < enemyTypes.Length; i++)
         {
             randomSpawnPoint = spawnPoints[i];
-            if (enemyTypes[i] == "RapidFireEnemy1")
+            if (enemyTypes[i] == "RapidFireEnemy")
             {
                 RapidFireEnemy enemy = Instantiate(rapidFireEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);
                 enemy.SetUpEnemy();
             }
-            if (enemyTypes[i] == "Kamikaze1")
+            if (enemyTypes[i] == "Kamikaze")
             {
                 KamikazeEnemy enemy = Instantiate(kamikazeEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);// enemy = new KamikazeEnemy();
                 enemy.SetUpEnemy();

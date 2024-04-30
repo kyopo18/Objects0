@@ -4,8 +4,7 @@ using UnityEngine;
 public class Enemy : Character
 {
     [SerializeField] public float attackDistance;
-    protected Player target;
-    
+    public Player target;
     protected override void Start()
     {
         base.Start();
@@ -14,7 +13,8 @@ public class Enemy : Character
 
     public void SetUpEnemy()
     {
-        target = FindObjectOfType<Player>();
+        target = FindAnyObjectByType<Player>();
+        Debug.Log("target acquired");
     }
     public override void Attack() 
     { 
@@ -24,6 +24,7 @@ public class Enemy : Character
     {
         if (target == null)
         {
+            target = FindAnyObjectByType<Player>();
             return;
         }
         else

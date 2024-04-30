@@ -8,7 +8,7 @@ public abstract class Character : MonoBehaviour, IDamageable
 {
     [SerializeField] private float speed;
     protected Health healthPoints;
-    [SerializeField] protected Weapon weapon;
+    [SerializeField] internal Weapon weapon;
     [SerializeField] protected int maxHealth;
     [SerializeField] protected Rigidbody2D rigidBody;
     [SerializeField] public Bullet bulletPrefab;
