@@ -5,6 +5,8 @@ public class Enemy : Character
 {
     [SerializeField] public float attackDistance;
     public Player target;
+    [SerializeField] public float enemyCoolDown= 3f;
+    float enemyTimer;
     protected override void Start()
     {
         base.Start();
