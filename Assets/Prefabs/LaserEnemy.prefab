@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7098324125890835214}
   - component: {fileID: 7098324125890835209}
-  - component: {fileID: 7098324125890835208}
   - component: {fileID: 7098324125890835211}
   - component: {fileID: 4810499558850743738}
+  - component: {fileID: 5000613804660276681}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: LaserEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,25 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7098324125890835208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7098324125890835210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02370fec301069b4894a5ae3ea887995, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  weapon: {fileID: 0}
-  maxHealth: 0
-  rigidBody: {fileID: 7098324125890835211}
-  bulletPrefab: {fileID: 1436997757456643390, guid: 280cd30f6477296478b337b579e9f61c, type: 3}
-  attackDistance: 2
-  enemyCoolDown: 0.5
 --- !u!50 &7098324125890835211
 Rigidbody2D:
   serializedVersion: 4
@@ -144,6 +125,26 @@ CapsuleCollider2D:
   m_Offset: {x: -0.04946936, y: -0.0009249987}
   m_Size: {x: 1.6712513, y: 0.91509295}
   m_Direction: 1
+--- !u!114 &5000613804660276681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7098324125890835210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9c20935af05df48a62ad4e7375e286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  weapon: {fileID: 11400000, guid: 29e5abe1509ce0245bffe39ca402a598, type: 2}
+  maxHealth: 1
+  rigidBody: {fileID: 7098324125890835211}
+  bulletPrefab: {fileID: 1436997757456643390, guid: 280cd30f6477296478b337b579e9f61c, type: 3}
+  attackDistance: 5
+  enemyCoolDown: 3
+  enemyWeapon: {fileID: 11400000, guid: 29e5abe1509ce0245bffe39ca402a598, type: 2}
 --- !u!1001 &7098324125866010488
 PrefabInstance:
   m_ObjectHideFlags: 0

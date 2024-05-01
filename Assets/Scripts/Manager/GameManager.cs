@@ -50,31 +50,31 @@ public class GameManager : MonoBehaviour
         coroutine = StartCoroutine(SpawnEnemy());
     }
 
-    protected void XSetUpEnemy()
-    {
-        Transform randomSpawnPoint;
-        for (int i = 0; i < enemyTypes.Length; i++)
-        {
-            randomSpawnPoint = spawnPoints[i];
-            if (enemyTypes[i] == "RapidFireEnemy1")
-            {
-                RapidFireEnemy enemy = Instantiate(rapidFireEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);
-                enemy.SetUpEnemy();
-            }
-            if (enemyTypes[i] == "Kamikaze1")
-            {
-                KamikazeEnemy enemy = Instantiate(kamikazeEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);// enemy = new KamikazeEnemy();
-                enemy.SetUpEnemy();
-            }
+    //protected void XSetUpEnemy()
+    //{
+    //    Transform randomSpawnPoint;
+    //    for (int i = 0; i < enemyTypes.Length; i++)
+    //    {
+    //        randomSpawnPoint = spawnPoints[i];
+    //        if (enemyTypes[i] == "RapidFireEnemy1")
+    //        {
+    //            RapidFireEnemy enemy = Instantiate(rapidFireEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);
+    //            enemy.SetUpEnemy();
+    //        }
+    //        if (enemyTypes[i] == "Kamikaze1")
+    //        {
+    //            KamikazeEnemy enemy = Instantiate(kamikazeEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);// enemy = new KamikazeEnemy();
+    //            enemy.SetUpEnemy();
+    //        }
             //if (enemyTypes[i] == "AccurateEnemy")
             //{
             //    Enemy enemy = Instantiate(accurateEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);//  enemy = new AccurateEnemy1();
             //    enemy.SetUpEnemy(1);
             //}
-        }
+        //}
 
 
-    }
+    //}
     IEnumerator SpawnEnemy() //Random.Range(0, spawnPoints.Length)
     {
 
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
             Enemy enemy = Instantiate(enemyPrefab, randomSpawnPoint.position, Quaternion.identity);
             enemy.SetUpEnemy();
             //Enemy enemyx = Instantiate(rapidFireEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);
-            //enemyx.SetUpEnemy(1); 
+            //enemyx.SetUpEnemy(1);
             //Enemy enemyy = Instantiate(kamikazeEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);
             //enemyy.SetUpEnemy(1);
             //Debug.Log("TEST");

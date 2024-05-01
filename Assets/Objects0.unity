@@ -338,7 +338,7 @@ MonoBehaviour:
   - {fileID: 705282824}
   - {fileID: 307806349}
   - {fileID: 842639884}
-  enemyPrefab: {fileID: 710603169957251543, guid: 4edb7f8fd17338a48ad704e24ea848c8, type: 3}
+  enemyPrefab: {fileID: 5000613804660276681, guid: 1000da5067e2c4e479e1b0cb7da31971, type: 3}
   rapidFireEnemyPrefab: {fileID: 7385656078183817365, guid: 4edb7f8fd17338a48ad704e24ea848c8, type: 3}
   kamikazeEnemyPrefab: {fileID: 0}
   enemyTypes:

@@ -5,6 +5,8 @@ public class Enemy : Character
 {
     [SerializeField] public float attackDistance;
     protected Player target;
+    [SerializeField] private float enemyCoolDown = 3f;
+    protected float enemyTimer;
     
     protected override void Start()
     {
@@ -15,11 +17,24 @@ public class Enemy : Character
     public void SetUpEnemy()
     {
         target = FindObjectOfType<Player>();
-    }
-    public override void Attack() 
-    { 
-    }
         
+        //weapon = new Weapon(); // 29/04/24 0900 
+
+    }
+
+    public void SetUpEnemy(int healthParam)
+    {
+        healthPoints = new Health(healthParam);
+        target = FindObjectOfType<Player>();
+        healthPoints.OnHealthChanged.AddListener(ChangedHealth);
+    }
+    public override void Attack() ///change this to finish assignment
+    {
+        target.ReceiveDamage();
+ 
+        //enemyWeapon.Invoke(enemyShootTimer);
+    }
+
     private void FixedUpdate()
     {
         if (target == null)
@@ -54,7 +69,19 @@ public class Enemy : Character
         else //everytime the enemy is close to the player
         {
             // STOP IMMEDIATELY
-            rigidBody.velocity = Vector2.zero; //ADD A TIMER HERE
+            rigidBody.velocity = Vector2.zero; 
+            //ADD A TIMER HERE
+            if (enemyTimer <= 0)
+            {
+                enemyTimer = enemyCoolDown;
+                Attack();
+            }
+            else // Decreases timer to 0 in real time.
+            {
+                enemyTimer -= Time.deltaTime;
+            }
+
+            
         }
 
     }
