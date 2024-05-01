@@ -11,7 +11,7 @@ public class Weapon : ScriptableObject
     [SerializeField] private float shootAccuracy;
     [SerializeField] private float shootDistance;
    //Player1 player1;
-   private Bullet bulletReference;
+   [SerializeField] private Bullet bulletReference;
    // [SerializeField] private bool exploding = false;
 
     //every 2seconds spawn bullet while OnClick use coroutine or timer
@@ -24,13 +24,13 @@ public class Weapon : ScriptableObject
         tempBullet.SetUpBullet(tag, 1);
         
     }
-  /*   //KVN H!!!!!!!!!!!!!
+  /*   //KVN H!!!!!!!!!!!!! Leave in code for now
     public void ShootMe(Vector2 sighting) 
     {
         //Player player = gameObject.CompareTag("Player");
         Bullet tempBullet = Instantiate(bulletReference, sighting, Quaternion.identity);
 
-    }
+    //}
 
     public void ShootMe(Vector2 sighting, float accshoot) // Highly accurate sighting low fire rate.
     {
@@ -38,7 +38,7 @@ public class Weapon : ScriptableObject
         Bullet tempBullet = Instantiate(bulletReference, sighting, Quaternion.identity);
         
 
-    } //KVN H!!!!!!!!!!!!!!!!!!!
+    //} //KVN H!!!!!!!!!!!!!!!!!!! Leave in code for now
 
     */
   public virtual void WeaponSetup(Bullet bulletReference)
