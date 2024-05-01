@@ -4,36 +4,28 @@ using UnityEngine;
 public class Enemy : Character
 {
     [SerializeField] public float attackDistance;
-    protected Player target;
-    [SerializeField] private float enemyCoolDown = 3f;
-    protected float enemyTimer;
-    
+    public Player target;
     protected override void Start()
     {
         base.Start();
-        SetUpEnemy();
+        // SetUpEnemy();
     }
 
     public void SetUpEnemy()
     {
-        target = FindObjectOfType<Player>();
+        target = FindAnyObjectByType<Player>();
+        Debug.Log("target acquired");
     }
-
-    public void SetUpEnemy(int healthParam)
-    {
-        healthPoints = new Health(healthParam);
-        target = FindObjectOfType<Player>();
-        healthPoints.OnHealthChanged.AddListener(ChangedHealth);
+    public override void Attack() 
+    { 
+         target.ReceiveDamage();
     }
-    public override void Attack() //Default Attck
-    {
-        target.ReceiveDamage();
-    }
-
+        
     private void FixedUpdate()
     {
         if (target == null)
         {
+            target = FindAnyObjectByType<Player>();
             return;
         }
         else
