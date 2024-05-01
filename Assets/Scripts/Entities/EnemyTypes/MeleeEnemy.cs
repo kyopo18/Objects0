@@ -4,20 +4,33 @@ using UnityEngine;
 
 public class MeleeEnemy : Enemy
 {
+    [SerializeField] public MeleeSpikeWeapon meleeWeaponPrefab;
+    internal MeleeSpikeWeapon spikeWeapon;
+    Animator animator;
     public MeleeEnemy()
     {
     }
-
-    // Start is called before the first frame update
-    protected override void Start()
+   protected override void Start()
     {
-        base.Start();
-        
+        healthPoints = new Health(maxHealth);
+       spikeWeapon = Instantiate(meleeWeaponPrefab);
+        spikeWeapon.WeaponSetup(target, this);
+        healthPoints.OnHealthChanged.AddListener(ChangedHealth);
+        rigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+   
+    void FixedUpdate()
     {
-        
+        base.Move();
+        if (Vector2.Distance(target.transform.position, transform.position) <= Time.deltaTime * attackDistance * 235f)
+        {
+         spikeWeapon.AttackModeOn(animator, true);
+        }
+        else
+        {
+            spikeWeapon.AttackModeOn(animator, false);
+        }
     }
 }
