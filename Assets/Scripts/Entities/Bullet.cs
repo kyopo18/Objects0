@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    
     public float bulletSpeed;
     private string targetTag;
     private int damage;
@@ -23,8 +22,6 @@ public class Bullet : MonoBehaviour
     {
         //JUST MOVING FORWARD
         transform.Translate(Vector2.right * bulletSpeed * Time.deltaTime);
-        //Other working line for aim empty.
-        //transform.Translate(Vector2.up * bulletSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

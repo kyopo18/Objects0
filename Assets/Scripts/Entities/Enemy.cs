@@ -17,9 +17,6 @@ public class Enemy : Character
     public void SetUpEnemy()
     {
         target = FindObjectOfType<Player>();
-        
-        //weapon = new Weapon(); // 29/04/24 0900 
-
     }
 
     public void SetUpEnemy(int healthParam)
@@ -28,11 +25,9 @@ public class Enemy : Character
         target = FindObjectOfType<Player>();
         healthPoints.OnHealthChanged.AddListener(ChangedHealth);
     }
-    public override void Attack() ///change this to finish assignment
+    public override void Attack() //Default Attck
     {
         target.ReceiveDamage();
- 
-        //enemyWeapon.Invoke(enemyShootTimer);
     }
 
     private void FixedUpdate()
@@ -68,9 +63,7 @@ public class Enemy : Character
         }
         else //everytime the enemy is close to the player
         {
-            // STOP IMMEDIATELY
             rigidBody.velocity = Vector2.zero; 
-            //ADD A TIMER HERE
             if (enemyTimer <= 0)
             {
                 enemyTimer = enemyCoolDown;

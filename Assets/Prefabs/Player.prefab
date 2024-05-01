@@ -284,9 +284,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 250
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: 29c553ca4f20165468e2d5778caf9ab9, type: 2}
   maxHealth: 100
   rigidBody: {fileID: 2075651168194376154}
+  bulletPrefab: {fileID: 1436997757456643390, guid: 280cd30f6477296478b337b579e9f61c, type: 3}
 --- !u!114 &2075651168194376155
 MonoBehaviour:
   m_ObjectHideFlags: 0
