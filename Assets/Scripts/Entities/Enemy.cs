@@ -4,7 +4,10 @@ using UnityEngine;
 public class Enemy : Character
 {
     [SerializeField] public float attackDistance;
-    public Player target;
+    protected Player target;
+    [SerializeField] private float enemyCoolDown = 3f;
+    protected float enemyTimer;
+    
     protected override void Start()
     {
         base.Start();
@@ -13,18 +16,24 @@ public class Enemy : Character
 
     public void SetUpEnemy()
     {
-        target = FindAnyObjectByType<Player>();
-        Debug.Log("target acquired");
+        target = FindObjectOfType<Player>();
     }
-    public override void Attack() 
-    { 
+
+    public void SetUpEnemy(int healthParam)
+    {
+        healthPoints = new Health(healthParam);
+        target = FindObjectOfType<Player>();
+        healthPoints.OnHealthChanged.AddListener(ChangedHealth);
     }
-        
+    public override void Attack() //Default Attck
+    {
+        target.ReceiveDamage();
+    }
+
     private void FixedUpdate()
     {
         if (target == null)
         {
-            target = FindAnyObjectByType<Player>();
             return;
         }
         else
@@ -54,8 +63,18 @@ public class Enemy : Character
         }
         else //everytime the enemy is close to the player
         {
-            // STOP IMMEDIATELY
-            rigidBody.velocity = Vector2.zero; //ADD A TIMER HERE
+            rigidBody.velocity = Vector2.zero; 
+            if (enemyTimer <= 0)
+            {
+                enemyTimer = enemyCoolDown;
+                Attack();
+            }
+            else // Decreases timer to 0 in real time.
+            {
+                enemyTimer -= Time.deltaTime;
+            }
+
+            
         }
 
     }

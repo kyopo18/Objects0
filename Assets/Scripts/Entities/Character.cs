@@ -16,8 +16,8 @@ public abstract class Character : MonoBehaviour, IDamageable
     protected virtual void Start()
     {
         healthPoints = new Health(maxHealth);
-        weapon = ScriptableObject.CreateInstance<Weapon>();
-        weapon.WeaponSetup(bulletPrefab);
+        // weapon = ScriptableObject.CreateInstance<Weapon>();
+        // weapon.WeaponSetup(bulletPrefab);
         healthPoints.OnHealthChanged.AddListener(ChangedHealth);
         rigidBody = GetComponent<Rigidbody2D>();
     }
@@ -39,8 +39,7 @@ public abstract class Character : MonoBehaviour, IDamageable
     }
     public virtual void Move(Vector2 direction, float angle)
     {
-        rigidBody.AddForce(direction.normalized * speed * 
-        Time.deltaTime * 500f); // *500f for a hard a value and use a lower speed.
+        rigidBody.AddForce(direction.normalized * speed * Time.deltaTime * 500f); // *500f for a hard a value and use a lower speed.
         transform.rotation = Quaternion.Euler(0, 0, angle); // rotation
     }
 

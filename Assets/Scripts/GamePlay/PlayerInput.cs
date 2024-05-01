@@ -8,13 +8,8 @@ public class PlayerInput : MonoBehaviour
     private Player myPlayer;
     public Vector2 direction;
     public float angleToRotate;
-
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        
         myPlayer = GetComponent<Player>();
     }
 
