@@ -5,12 +5,12 @@ public class Enemy : Character
 {
     [SerializeField] public float attackDistance;
     public Player target;
-    public float attackCooldown;
-    protected float attackTimer;
+    [SerializeField] public float enemyCoolDown= 3f;
+    float enemyTimer;
     protected override void Start()
     {
         base.Start();
-        SetUpEnemy();
+        // SetUpEnemy();
     }
 
     public void SetUpEnemy()
@@ -57,13 +57,16 @@ public class Enemy : Character
         }
         else //everytime the enemy is close to the player
         {
-            rigidBody.velocity = Vector2.zero;
-            attackTimer = Time.fixedUnscaledTime + attackCooldown;
-            if (Time.fixedUnscaledTime >= attackTimer)
+            rigidBody.velocity = Vector2.zero; 
+            if (enemyTimer <= 0)
             {
+                enemyTimer = enemyCoolDown;
                 Attack();
             }
-            else return;
+            else // Decreases timer to 0 in real time.
+            {
+                enemyTimer -= Time.deltaTime;
+            }
 
             
         }
