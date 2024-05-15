@@ -20,6 +20,10 @@ public class MeleeEnemy : Enemy
         animator = GetComponent<Animator>();
     }
 
+    public override void Attack()
+    {
+        Debug.LogWarning("Attacking w/ melee");
+    }
    
     void FixedUpdate()
     {
