@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class NukePickup : PickUp
 {
-    
+    protected override void PickMe(Player player)
+    {
+        player.OnNukePickup();
+        base.PickMe(player);
+    }
 }

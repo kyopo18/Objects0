@@ -22,4 +22,20 @@ public class Player : Character
         healthPoints.DecreaseLife();
         Debug.Log("LOST HEALTH. CURRENT HEALTH: " + healthPoints.currentHealth);
     }
+    public void OnFireRatePickup(float duration)
+    {
+
+    }
+    public void OnHealthPickup(int heal)
+    {
+
+    }
+    public void OnNukePickup()
+    {
+
+    }
+    public void OnShieldPickup(int shieldAmount)
+    {
+
+    }
 }
