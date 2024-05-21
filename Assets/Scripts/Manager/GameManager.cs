@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     Coroutine coroutine;
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private Enemy[] enemyPrefabs;
+
+    private List<Enemy> enemiesAlive = new List<Enemy>() ;
 
     private void Awake()
     {
@@ -34,7 +37,6 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator SpawnEnemy() //Random.Range(0, spawnPoints.Length)
     {
-
         while (true)
         {
             yield return new WaitForSeconds(5f);
@@ -43,10 +45,25 @@ public class GameManager : MonoBehaviour
             Debug.Log(randomSpawnPoint.position);
             Enemy enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], randomSpawnPoint.position, Quaternion.identity);
             enemy.SetUpEnemy();
+            enemiesAlive.Add(enemy);
         }
-
-
-
+    }
+    public void OnEnemyKilled(Enemy killed)
+    {
+        scoreManager.IncreaseScore();
+        enemiesAlive.Remove(killed);
+    }
+    public void OnNuke()
+    {
+        List<Enemy> clone = new List<Enemy>();
+        clone.AddRange(enemiesAlive);
+        foreach(Enemy enemy in clone)
+        {
+            if(enemy!=null)
+            {
+                enemy.Die();
+            }
+        }
     }
 
 }

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Character
-{    protected override void Start()
+{    
+    private bool hasNuke = false;
+    protected override void Start()
     {
         base.Start();
     }
@@ -32,10 +34,20 @@ public class Player : Character
     }
     public void OnNukePickup()
     {
-        
+        if(!hasNuke)
+        {
+            hasNuke = true;
+        }
     }
     public void OnShieldPickup(int shieldAmount)
     {
 
+    }
+    public void UseNuke()
+    {
+        if(hasNuke)
+        {
+            GameManager.singleton.OnNuke();
+        }
     }
 }
