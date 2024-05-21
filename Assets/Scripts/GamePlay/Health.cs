@@ -4,6 +4,7 @@ public class Health
 {
     public int currentHealth;
     public UnityEvent<int> OnHealthChanged;
+    private int maxHealth;
 
     public void DecreaseLife(int damage)
     {
@@ -24,14 +25,23 @@ public class Health
         
     }
 
-    public void IncreaseLife()
+    public void IncreaseLife(int heal)
     {
+        if(currentHealth + heal > maxHealth)
+        {
+            currentHealth  = maxHealth;
+        }
+        else
+        {
+            currentHealth += heal;
+        }
 
     }
 
     public Health(int maxHealth)
     {
         currentHealth = maxHealth;
+        this.maxHealth = maxHealth;
         OnHealthChanged = new UnityEvent<int>();
     }
 

@@ -28,11 +28,11 @@ public class Player : Character
     }
     public void OnHealthPickup(int heal)
     {
-
+        healthPoints.IncreaseLife(heal);
     }
     public void OnNukePickup()
     {
-
+        
     }
     public void OnShieldPickup(int shieldAmount)
     {
