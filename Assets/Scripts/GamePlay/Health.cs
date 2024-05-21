@@ -4,18 +4,39 @@ public class Health
 {
     public int currentHealth;
     public UnityEvent<int> OnHealthChanged;
+    public UnityEvent<int> OnShieldChanged;
     private int maxHealth;
+    private int shieldAmount = 0;
+    private int shieldAmountMax;
 
     public void DecreaseLife(int damage)
     {
+        if(shieldAmount > 0)
+        {
+            damage = ReduceShieldDamage(damage);
+        }
         currentHealth -= damage;
         OnHealthChanged.Invoke(currentHealth);
     }
 
+    private int   ReduceShieldDamage(int damage)
+    {
+        // Reduces both damage and shield
+        int minValue = Mathf.Min(shieldAmountMax, damage);
+        damage -= minValue;
+        shieldAmount -= minValue;
+        return damage;
+    }
+
     public void DecreaseLife()
     {
+        int damage = 1;
+        if(shieldAmount > 0)
+        {
+            damage = ReduceShieldDamage(damage);
+        }
         Debug.Log("LOST Health. CURRENT HEALTH: " + currentHealth);
-        currentHealth -= 1;
+        currentHealth -= damage;
         OnHealthChanged.Invoke(currentHealth);
 
     }
@@ -35,13 +56,27 @@ public class Health
         {
             currentHealth += heal;
         }
+        OnHealthChanged.Invoke(currentHealth);
 
+    }
+    public void AddShield(int shieldAmount)
+    {
+        if(this.shieldAmount + shieldAmount > shieldAmountMax)
+        {
+            shieldAmount = shieldAmountMax;
+        }
+        else
+        {
+            this.shieldAmount += shieldAmount;
+        }
+        OnShieldChanged.Invoke(shieldAmount);
     }
 
     public Health(int maxHealth)
     {
         currentHealth = maxHealth;
         this.maxHealth = maxHealth;
+        shieldAmountMax = currentHealth/10;
         OnHealthChanged = new UnityEvent<int>();
     }
 

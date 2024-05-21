@@ -41,7 +41,7 @@ public class Player : Character
     }
     public void OnShieldPickup(int shieldAmount)
     {
-
+        healthPoints.AddShield(shieldAmount);
     }
     public void UseNuke()
     {
