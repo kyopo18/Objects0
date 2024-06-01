@@ -14,6 +14,7 @@ public class Player : Character
     public override void Die()
     {
         GameManager.singleton.EndGame();
+        //ScoreManager1.singleton.DisplayHighScoreOnGameOver(); // Call the method to display high score
         Destroy(gameObject);
     }
 
