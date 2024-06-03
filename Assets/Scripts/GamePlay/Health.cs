@@ -13,18 +13,19 @@ public class Health
     {
         if(shieldAmount > 0)
         {
-            damage = ReduceShieldDamage(damage);
+            damage = ReduceShieldAndDamage(damage);
         }
         currentHealth -= damage;
         OnHealthChanged.Invoke(currentHealth);
     }
 
-    private int   ReduceShieldDamage(int damage)
+    private int ReduceShieldAndDamage(int damage)
     {
         // Reduces both damage and shield
         int minValue = Mathf.Min(shieldAmountMax, damage);
         damage -= minValue;
         shieldAmount -= minValue;
+        OnShieldChanged.Invoke(shieldAmount);
         return damage;
     }
 
@@ -33,7 +34,7 @@ public class Health
         int damage = 1;
         if(shieldAmount > 0)
         {
-            damage = ReduceShieldDamage(damage);
+            damage = ReduceShieldAndDamage(damage);
         }
         Debug.Log("LOST Health. CURRENT HEALTH: " + currentHealth);
         currentHealth -= damage;

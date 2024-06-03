@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour
     Coroutine coroutine;
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private Enemy[] enemyPrefabs;
+    [SerializeField] float scale = 1, baseExp = 1.01f; 
+    int time = 0;
+    [SerializeField] int EnemyCap = 200;
 
     private List<Enemy> enemiesAlive = new List<Enemy>() ;
 
@@ -22,7 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartSpawningEnemy();
-
+        StartCoroutine(AddTimer());
     }
 
     public void EndGame()
@@ -39,13 +43,31 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(5f);
-            int randomIndex = Random.Range(0, spawnPoints.Length);
-            Transform randomSpawnPoint = spawnPoints[randomIndex];
-            Debug.Log(randomSpawnPoint.position);
-            Enemy enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], randomSpawnPoint.position, Quaternion.identity);
-            enemy.SetUpEnemy();
-            enemiesAlive.Add(enemy);
+            if(enemiesAlive.Count >= EnemyCap){
+                yield return new WaitForSeconds(1f);
+            }
+            else{
+                SpawnSingleEnemy();
+                yield return new WaitForSeconds(CalculateNextSpawnTime());
+            }
+            
+        }
+    }
+    void SpawnSingleEnemy()
+    {
+        int randomIndex = Random.Range(0, spawnPoints.Length);
+        Transform randomSpawnPoint = spawnPoints[randomIndex];
+        Debug.Log(randomSpawnPoint.position);
+        Enemy enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], randomSpawnPoint.position, Quaternion.identity);
+        enemy.SetUpEnemy();
+        enemiesAlive.Add(enemy);
+    }
+    IEnumerator AddTimer() //Random.Range(0, spawnPoints.Length)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            time ++;
         }
     }
     public void OnEnemyKilled(Enemy killed)
@@ -64,6 +86,10 @@ public class GameManager : MonoBehaviour
                 enemy.Die();
             }
         }
+    }
+    public float CalculateNextSpawnTime()
+    {
+        return scale*Mathf.Pow(baseExp, -time);
     }
 
 }
