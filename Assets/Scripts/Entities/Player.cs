@@ -12,6 +12,7 @@ public class Player : Character
     public override void Attack() // base attack
     {
         weapon.ShootMe(transform, "Enemy"); //OTHER WORKING LINE for bullet inside player
+        SoundManager.Instance.PlayShootSound(transform.position);
     }
     public override void Die()
     {
@@ -31,6 +32,7 @@ public class Player : Character
     public void OnHealthPickup(int heal)
     {
         healthPoints.IncreaseLife(heal);
+        SoundManager.Instance.PlayPickupSound(transform.position);
     }
     public void OnNukePickup()
     {
