@@ -15,8 +15,9 @@ public class Enemy : Character
 
     public void SetUpEnemy()
     {
-        target = FindAnyObjectByType<Player>();
-        Debug.Log("target acquired");
+        // target = FindAnyObjectByType<Player>();
+        target = GameManager.singleton.player;
+        // Debug.Log("target acquired");
     }
     public override void Attack() 
     { 
@@ -44,6 +45,7 @@ public class Enemy : Character
     public override void Die()
     {
         GameManager.singleton.scoreManager.IncreaseScore();
+        SpawnPickupManager.instance.SpawnPickup(transform.position);
         Destroy(gameObject);
     }
 
@@ -59,6 +61,7 @@ public class Enemy : Character
         }
         else //everytime the enemy is close to the player
         {
+            Face(angle);
             rigidBody.velocity = Vector2.zero; 
             if (enemyTimer <= 0)
             {
@@ -74,7 +77,6 @@ public class Enemy : Character
         }
 
     }
-
     protected virtual void StopTargeting()
     {
 

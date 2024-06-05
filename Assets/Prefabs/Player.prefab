@@ -5113,7 +5113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031ee845b4aff3045956f97b0399ae79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
   direction: {x: 0, y: 0}
   angleToRotate: 0
 --- !u!50 &2075651168194376154
@@ -5258,6 +5257,10 @@ PrefabInstance:
     - target: {fileID: 4735194838654956, guid: ceb2e69d6fcbbcf4eb36a02462f60ce6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.042
+      objectReference: {fileID: 0}
+    - target: {fileID: 60459162822621898, guid: ceb2e69d6fcbbcf4eb36a02462f60ce6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceb2e69d6fcbbcf4eb36a02462f60ce6, type: 3}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8060289197758766356}
   - component: {fileID: 2012173721}
   m_Layer: 0
-  m_Name: Pickup
+  m_Name: Pickup Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c9af1b15dab5b49a818e8c0303b4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  despawn: 0
 --- !u!58 &2012173721
 CircleCollider2D:
   m_ObjectHideFlags: 0

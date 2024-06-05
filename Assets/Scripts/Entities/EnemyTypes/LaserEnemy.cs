@@ -27,6 +27,7 @@ public class LaserEnemy : Enemy
         }
         else //everytime the enemy is close to the player
         {
+            Face(angle);
             rigidBody.velocity = Vector2.zero;
             if (enemyTimer <= 0)
             {

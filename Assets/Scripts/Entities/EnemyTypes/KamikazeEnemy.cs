@@ -4,40 +4,9 @@ using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class KamikazeEnemy : Enemy
-{
-    public KamikazeEnemy()
-     {
-
-     }
-
-    
-                 
+{       
     public int damage = 10;                // Amount of damage to deal to the player on collision
     public GameObject explosionEffect;     // Prefab for the explosion effect
-
-    private Player player;              // Reference to the player's transform
-
-    private void Start()
-    {
-        // Find the player GameObject by tag
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null)
-        {
-           // player = player.transform;
-        }
-    }
-
-    private void Update()
-    {
-        // Move towards the player if the player reference is found
-        if (player != null)
-        {
-            //Vector2 direction = (player.position - transform.position).normalized;
-            //transform.position += (Vector3)direction * speed * Time.deltaTime;
-        }
-    }
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public Camera mainCamera;
     private Player myPlayer;
     public Vector2 direction;
     public float angleToRotate;
@@ -15,9 +14,9 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            myPlayer.Attack();
+            myPlayer.AutoFire();
         }
     }
 
@@ -27,7 +26,6 @@ public class PlayerInput : MonoBehaviour
         //Keyboard Inputs
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
-
         //mouse positions
         
         direction = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
