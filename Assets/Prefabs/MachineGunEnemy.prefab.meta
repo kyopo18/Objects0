@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Melee.prefab.meta
+guid: 367521e050cb3bf4a81f39442f7647cf
+========
+guid: 1000da5067e2c4e479e1b0cb7da31971
+>>>>>>>> main:Assets/Prefabs/LaserEnemy.prefab.meta
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

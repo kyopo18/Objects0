@@ -18,4 +18,4 @@ MonoBehaviour:
   shootSpeed: 5
   shootAccuracy: 0
   shootDistance: 0
-  bulletReference: {fileID: 1436997757456643390, guid: 280cd30f6477296478b337b579e9f61c, type: 3}
+  bulletReference: {fileID: 1436997757456643390, guid: f40b5e5bcd73477439a4921ec45512b1, type: 3}
