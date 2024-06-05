@@ -88,4 +88,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   despawn: 10
-  duration: 10
+  duration: 4
+  fireRate: 0.05

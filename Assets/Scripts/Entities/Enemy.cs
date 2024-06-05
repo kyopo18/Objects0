@@ -45,6 +45,7 @@ public class Enemy : Character
     public override void Die()
     {
         GameManager.singleton.scoreManager.IncreaseScore();
+        SpawnPickupManager.instance.SpawnPickup(transform.position);
         Destroy(gameObject);
     }
 

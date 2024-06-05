@@ -11,6 +11,9 @@ public class DividingEnemy : Enemy
     public override void Die() {
         if(iterations > 0){
             StartCoroutine(StartSpawningEnemies());
+            Destroy(gameObject);
+            GameManager.singleton.scoreManager.IncreaseScore();
+            return;
         }
         base.Die();
     }
