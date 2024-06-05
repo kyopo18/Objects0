@@ -25,7 +25,9 @@ public class PickUp : MonoBehaviour
     // Base class for nuke pickups
     public virtual void ActivateNuke()
     {
-        
+
+
+
     }
 }
 

@@ -11,7 +11,7 @@ public class KamikazeEnemy : Enemy
      }
 
     
-    public float speed = 5f;               // Speed at which the enemy moves towards the player
+                 
     public int damage = 10;                // Amount of damage to deal to the player on collision
     public GameObject explosionEffect;     // Prefab for the explosion effect
 
@@ -37,17 +37,16 @@ public class KamikazeEnemy : Enemy
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the collided object is the player
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             // Damage the player
-            Health playerHealth = other.GetComponent<Health>();
-            if (playerHealth != null)
-            {
-                playerHealth.DecreaseLife(damage);
-            }
+            collision.GetComponent<IDamageable>().ReceiveDamage(damage);
+            Debug.Log("Its hitting!");
 
             // Create an explosion effect
             if (explosionEffect != null)

@@ -89,9 +89,9 @@ MonoBehaviour:
   maxHealth: 1
   rigidBody: {fileID: 7098324125890835211}
   bulletPrefab: {fileID: 1436997757456643390, guid: 280cd30f6477296478b337b579e9f61c, type: 3}
-  attackDistance: 2
+  attackDistance: 3
   target: {fileID: 0}
-  enemyCoolDown: 0.5
+  enemyCoolDown: 0.2
 --- !u!1001 &7098324125866010488
 PrefabInstance:
   m_ObjectHideFlags: 0

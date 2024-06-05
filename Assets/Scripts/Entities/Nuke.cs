@@ -8,6 +8,15 @@ public class Nuke : PickUp
         DestroyAllExceptPlayer();
     }
 
+    protected override void PickMe(Player characterToChange)
+    {
+        ActivateNuke();
+        base.PickMe(characterToChange);
+        
+        
+    }
+
+
     private void DestroyAllExceptPlayer()
     {
         // Find all objects of type Enemy and PickUp and destroy them

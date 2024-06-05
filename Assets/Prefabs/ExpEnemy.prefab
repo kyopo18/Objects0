@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7098324125890835214}
   - component: {fileID: 7098324125890835211}
   - component: {fileID: 4810499558850743738}
-  - component: {fileID: -120511786229069990}
+  - component: {fileID: 1699328966}
   m_Layer: 0
   m_Name: ExpEnemy
   m_TagString: Enemy
@@ -69,10 +69,10 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04946936, y: -0.0009249987}
-  m_Size: {x: 1.6712513, y: 0.91509295}
+  m_Offset: {x: -0.04035199, y: -0.0032043413}
+  m_Size: {x: 1.7806642, y: 1.2205346}
   m_Direction: 1
---- !u!114 &-120511786229069990
+--- !u!114 &1699328966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,14 +84,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b0d9e9c996fb4478a7abb1ccf663d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 5
   weapon: {fileID: 0}
-  maxHealth: 0
-  rigidBody: {fileID: 0}
+  maxHealth: 1
+  rigidBody: {fileID: 7098324125890835211}
   bulletPrefab: {fileID: 0}
-  attackDistance: 0
+  attackDistance: 0.2
   target: {fileID: 0}
-  enemyCoolDown: 0
+  enemyCoolDown: 1
+  damage: 10
+  explosionEffect: {fileID: 0}
 --- !u!1001 &7098324125866010488
 PrefabInstance:
   m_ObjectHideFlags: 0
