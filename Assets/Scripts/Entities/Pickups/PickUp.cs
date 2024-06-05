@@ -20,4 +20,14 @@ public class PickUp : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    
+    // Base class for nuke pickups
+    public virtual void ActivateNuke()
+    {
+
+
+
+    }
 }
+

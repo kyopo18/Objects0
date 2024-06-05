@@ -6,7 +6,7 @@ public class Enemy : Character
     [SerializeField] public float attackDistance;
     public Player target;
     [SerializeField] public float enemyCoolDown= 3f;
-    float enemyTimer;
+    protected float enemyTimer;
     protected override void Start()
     {
         base.Start();
@@ -27,8 +27,10 @@ public class Enemy : Character
     {
         if (target == null)
         {
+            StopTargeting();
             target = FindAnyObjectByType<Player>();
             return;
+
         }
         else
         {
@@ -70,6 +72,11 @@ public class Enemy : Character
 
             
         }
+
+    }
+
+    protected virtual void StopTargeting()
+    {
 
     }
 
