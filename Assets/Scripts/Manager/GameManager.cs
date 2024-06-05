@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
     }
     public void OnNuke()
     {
+        Debug.Log("I USE NUKE");
         List<Enemy> clone = new List<Enemy>();
         clone.AddRange(enemiesAlive);
         foreach(Enemy enemy in clone)
@@ -92,6 +93,11 @@ public class GameManager : MonoBehaviour
     public float CalculateNextSpawnTime()
     {
         return scale*Mathf.Pow(baseExp, -time);
+    }
+
+    public void AddEnemyToEnemiesAlive(Enemy enemyToAdd)
+    {
+        enemiesAlive.Add(enemyToAdd);
     }
 
 }

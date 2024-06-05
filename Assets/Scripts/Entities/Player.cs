@@ -64,6 +64,7 @@ public class Player : Character
     {
         if(!hasNuke)
         {
+            Debug.Log("I PICKED UP NUKE!");
             hasNuke = true;
         }
     }
@@ -75,7 +76,9 @@ public class Player : Character
     {
         if(hasNuke)
         {
+            Debug.Log("I USE NUKE!");
             GameManager.singleton.OnNuke();
+            hasNuke= false;
         }
     }
     private IEnumerator BuffTimer(float duration)

@@ -21,14 +21,15 @@ public class DividingEnemy : Enemy
         }
     }
     private void DecreaseIterations(int iterations){
-        this.iterations = iterations-1;
+        this.iterations = iterations -1;
     }
     private IEnumerator StartSpawningEnemies(){
-       for (int i = 0; i<numberToSpawn; i++){
+       for (int i = 0; i<numberToSpawn; i++)
+        {
                 DividingEnemy splitEnemy = Instantiate(this, transform.position + new Vector3(Mathf.Cos(2*Mathf.PI/numberToSpawn*i), Mathf.Sin(2*Mathf.PI/numberToSpawn*i)), Quaternion.identity);
                 splitEnemy.DecreaseIterations(iterations);
-                
-            }
+                GameManager.singleton.AddEnemyToEnemiesAlive(splitEnemy);
+        }
         yield return null;
     }
 }

@@ -256,6 +256,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6548323094658773686, guid: eb25a85d64d9d564abca1ce325073ad2, type: 3}
+      propertyPath: chanceOfSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548323094658773686, guid: eb25a85d64d9d564abca1ce325073ad2, type: 3}
+      propertyPath: spawnablePickups.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548323094658773686, guid: eb25a85d64d9d564abca1ce325073ad2, type: 3}
+      propertyPath: spawnablePickups.Array.data[1]
+      value: 
+      objectReference: {fileID: 8135119601653183652, guid: 75ad7c11f0c312c4f9db4adf12b96f23, type: 3}
     - target: {fileID: 6548323094658773687, guid: eb25a85d64d9d564abca1ce325073ad2, type: 3}
       propertyPath: m_Name
       value: SpawnPickupsOnEnemyDeath (1)

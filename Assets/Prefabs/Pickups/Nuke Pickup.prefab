@@ -67,5 +67,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nuke Pickup
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8060289197758766356, guid: e40b47231dd20834294154b297ba6043, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e40b47231dd20834294154b297ba6043, type: 3}
+--- !u!1 &2914827235806716026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6608515711343924227, guid: e40b47231dd20834294154b297ba6043, type: 3}
+  m_PrefabInstance: {fileID: 8342251919101310073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8135119601653183652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2914827235806716026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6984968751816bb45a28d635279ac286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawn: 10

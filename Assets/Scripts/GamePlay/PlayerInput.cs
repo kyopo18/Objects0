@@ -18,6 +18,11 @@ public class PlayerInput : MonoBehaviour
         {
             myPlayer.AutoFire();
         }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            myPlayer.UseNuke();
+        }
     }
 
     // Update is called once per frame
