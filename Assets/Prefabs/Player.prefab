@@ -5113,7 +5113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031ee845b4aff3045956f97b0399ae79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
   direction: {x: 0, y: 0}
   angleToRotate: 0
 --- !u!50 &2075651168194376154

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager singleton;
 
     public ScoreManager1 scoreManager;
+    [SerializeField] public Player player {get; private set;}
 
     Coroutine coroutine;
     [SerializeField] private Transform[] spawnPoints;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         singleton = this;
+        player = GetComponent<Player>();
     }
     void Start()
     {

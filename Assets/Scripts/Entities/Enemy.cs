@@ -15,7 +15,8 @@ public class Enemy : Character
 
     public void SetUpEnemy()
     {
-        target = FindAnyObjectByType<Player>();
+        // target = FindAnyObjectByType<Player>();
+        target = GameManager.singleton.player;
         // Debug.Log("target acquired");
     }
     public override void Attack() 
