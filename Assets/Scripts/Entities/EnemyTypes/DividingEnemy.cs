@@ -8,14 +8,17 @@ public class DividingEnemy : Enemy
     private void Awake() {
         gameObject.SetActive(true);
     }
-    public override void Die() {
+    public override void Die()
+    {
         if(iterations > 0){
             StartCoroutine(StartSpawningEnemies());
             Destroy(gameObject);
             GameManager.singleton.scoreManager.IncreaseScore();
-            return;
         }
-        base.Die();
+        else
+        {
+            base.Die();
+        }
     }
     private void DecreaseIterations(int iterations){
         this.iterations = iterations-1;

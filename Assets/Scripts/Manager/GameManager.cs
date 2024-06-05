@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager singleton;
 
     public ScoreManager1 scoreManager;
-    [SerializeField] public Player player {get; private set;}
+    public Player player {get; private set;}
 
     Coroutine coroutine;
     [SerializeField] private Transform[] spawnPoints;
