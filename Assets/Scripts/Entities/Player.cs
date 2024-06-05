@@ -23,7 +23,7 @@ public class Player : Character
     public override void ReceiveDamage()
     {
         healthPoints.DecreaseLife();
-        Debug.Log("LOST HEALTH. CURRENT HEALTH: " + healthPoints.currentHealth);
+        // Debug.Log("LOST HEALTH. CURRENT HEALTH: " + healthPoints.currentHealth);
     }
     public void OnFireRatePickup(float duration)
     {

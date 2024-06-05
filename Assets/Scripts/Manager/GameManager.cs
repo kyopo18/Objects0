@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     {
         int randomIndex = Random.Range(0, spawnPoints.Length);
         Transform randomSpawnPoint = spawnPoints[randomIndex];
-        Debug.Log(randomSpawnPoint.position);
+        // Debug.Log(randomSpawnPoint.position);
         Enemy enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], randomSpawnPoint.position, Quaternion.identity);
         enemy.SetUpEnemy();
         enemiesAlive.Add(enemy);

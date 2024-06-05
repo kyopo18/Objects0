@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
             //DO Damage to enemy
             collision.GetComponent<IDamageable>().ReceiveDamage(damage);
             Destroy(gameObject);
-            Debug.Log("Its hitting!");
+            // Debug.Log("Its hitting!");
         }
     }
 }

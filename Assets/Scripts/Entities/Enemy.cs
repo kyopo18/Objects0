@@ -16,7 +16,7 @@ public class Enemy : Character
     public void SetUpEnemy()
     {
         target = FindAnyObjectByType<Player>();
-        Debug.Log("target acquired");
+        // Debug.Log("target acquired");
     }
     public override void Attack() 
     { 
@@ -59,6 +59,7 @@ public class Enemy : Character
         }
         else //everytime the enemy is close to the player
         {
+            Face(angle);
             rigidBody.velocity = Vector2.zero; 
             if (enemyTimer <= 0)
             {
@@ -74,7 +75,6 @@ public class Enemy : Character
         }
 
     }
-
     protected virtual void StopTargeting()
     {
 
