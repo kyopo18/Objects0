@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager singleton;
 
     public ScoreManager1 scoreManager;
+    public Player player {get; private set;}
 
     Coroutine coroutine;
     [SerializeField] private Transform[] spawnPoints;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         singleton = this;
+        player = GetComponent<Player>();
     }
     void Start()
     {
@@ -57,7 +59,7 @@ public class GameManager : MonoBehaviour
     {
         int randomIndex = Random.Range(0, spawnPoints.Length);
         Transform randomSpawnPoint = spawnPoints[randomIndex];
-        Debug.Log(randomSpawnPoint.position);
+        // Debug.Log(randomSpawnPoint.position);
         Enemy enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], randomSpawnPoint.position, Quaternion.identity);
         enemy.SetUpEnemy();
         enemiesAlive.Add(enemy);
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour
     }
     public void OnNuke()
     {
+        Debug.Log("I USE NUKE");
         List<Enemy> clone = new List<Enemy>();
         clone.AddRange(enemiesAlive);
         foreach(Enemy enemy in clone)
@@ -90,6 +93,11 @@ public class GameManager : MonoBehaviour
     public float CalculateNextSpawnTime()
     {
         return scale*Mathf.Pow(baseExp, -time);
+    }
+
+    public void AddEnemyToEnemiesAlive(Enemy enemyToAdd)
+    {
+        enemiesAlive.Add(enemyToAdd);
     }
 
 }

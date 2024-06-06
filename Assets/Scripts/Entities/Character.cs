@@ -19,11 +19,11 @@ public abstract class Character : MonoBehaviour, IDamageable
         // weapon = ScriptableObject.CreateInstance<Weapon>();
         // weapon.WeaponSetup(bulletPrefab);
         healthPoints.OnHealthChanged.AddListener(ChangedHealth);
-        rigidBody = GetComponent<Rigidbody2D>();
+        // rigidBody = GetComponent<Rigidbody2D>();
     }
     public void ChangedHealth(int health)
     {
-        Debug.Log("LIFE HAS CHANGED TO " + health);
+        // Debug.Log("LIFE HAS CHANGED TO " + health);
         if (health <= 0)
         {
             Die();
@@ -42,6 +42,11 @@ public abstract class Character : MonoBehaviour, IDamageable
         rigidBody.AddForce(direction.normalized * speed * Time.deltaTime * 500f); // *500f for a hard a value and use a lower speed.
         transform.rotation = Quaternion.Euler(0, 0, angle); // rotation
     }
+    protected virtual void Face( float angle)
+    {
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
 
     public virtual void ReceiveDamage()
     {
@@ -50,6 +55,7 @@ public abstract class Character : MonoBehaviour, IDamageable
 
     public virtual void ReceiveDamage(int damage)
     {
+        
         healthPoints.DecreaseLife(damage);
     }
 }

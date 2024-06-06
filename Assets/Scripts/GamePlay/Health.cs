@@ -36,7 +36,7 @@ public class Health
         {
             damage = ReduceShieldAndDamage(damage);
         }
-        Debug.Log("LOST Health. CURRENT HEALTH: " + currentHealth);
+        // Debug.Log("LOST Health. CURRENT HEALTH: " + currentHealth);s
         currentHealth -= damage;
         OnHealthChanged.Invoke(currentHealth);
 

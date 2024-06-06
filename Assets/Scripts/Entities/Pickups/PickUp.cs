@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    [SerializeField] int despawn;
+    [SerializeField] int despawn = 10;
     private void Start() {
         Destroy(gameObject, despawn);
     }
@@ -20,4 +20,14 @@ public class PickUp : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    
+    // Base class for nuke pickups
+    public virtual void ActivateNuke()
+    {
+
+
+
+    }
 }
+
