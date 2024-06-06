@@ -16,6 +16,7 @@ public class Player : Character
     }
     public override void Die()
     {
+        SoundManager.Instance.PlayDieSound(transform.position);
         GameManager.singleton.EndGame();
         Destroy(gameObject);
     }
@@ -44,6 +45,7 @@ public class Player : Character
     public void OnShieldPickup(int shieldAmount)
     {
         healthPoints.AddShield(shieldAmount);
+        SoundManager.Instance.PlayShieldPickupSound(transform.position);
     }
     public void UseNuke()
     {

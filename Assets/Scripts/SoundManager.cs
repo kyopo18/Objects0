@@ -8,7 +8,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField] List<AudioClip> ShootSound;
     [SerializeField] List<AudioClip> HitSound;
     [SerializeField] List<AudioClip> PickupSound;
-    
+    [SerializeField] List<AudioClip> DieSound;
+    [SerializeField] List<AudioClip> ShieldPickupSound;
+
     AudioSource audioSource;
 
     private void Awake()
@@ -41,7 +43,15 @@ public class SoundManager : MonoBehaviour
     {
         PlaySound(PickupSound[index], pos);
     }
-   
+    public void PlayDieSound(Vector3 pos, int index = 0)
+    {
+        PlaySound(DieSound[index], pos);
+    }
+    public void PlayShieldPickupSound(Vector3 pos, int index = 0)
+    {
+        PlaySound(ShieldPickupSound[index], pos);
+    }
+
 
     private void PlaySound(AudioClip sound, Vector3 pos)
     {
