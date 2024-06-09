@@ -584,27 +584,27 @@ PrefabInstance:
     - target: {fileID: 6548323094658773686, guid: eb25a85d64d9d564abca1ce325073ad2, type: 3}
       propertyPath: spawnablePickups.Array.data[2]
       value: 
-      objectReference: {fileID: 518657503278127036, guid: d04e2476a1303694383bfee6f417ea1c, type: 3}
+      objectReference: {fileID: 748856211092676472, guid: d04e2476a1303694383bfee6f417ea1c, type: 3}
     - target: {fileID: 6548323094658773686, guid: eb25a85d64d9d564abca1ce325073ad2, type: 3}
       propertyPath: spawnablePickups.Array.data[3]
       value: 
-      objectReference: {fileID: 518657503278127036, guid: d04e2476a1303694383bfee6f417ea1c, type: 3}
+      objectReference: {fileID: 748856211092676472, guid: d04e2476a1303694383bfee6f417ea1c, type: 3}
     - target: {fileID: 6548323094658773686, guid: eb25a85d64d9d564abca1ce325073ad2, type: 3}
       propertyPath: spawnablePickups.Array.data[4]
       value: 
-      objectReference: {fileID: 518657503278127036, guid: d04e2476a1303694383bfee6f417ea1c, type: 3}
+      objectReference: {fileID: 748856211092676472, guid: d04e2476a1303694383bfee6f417ea1c, type: 3}
     - target: {fileID: 6548323094658773686, guid: eb25a85d64d9d564abca1ce325073ad2, type: 3}
       propertyPath: spawnablePickups.Array.data[5]
       value: 
-      objectReference: {fileID: 3018706815784398307, guid: 3557c743104c26a438d70fad04fe9fe1, type: 3}
+      objectReference: {fileID: 37641520599616946, guid: 3557c743104c26a438d70fad04fe9fe1, type: 3}
     - target: {fileID: 6548323094658773686, guid: eb25a85d64d9d564abca1ce325073ad2, type: 3}
       propertyPath: spawnablePickups.Array.data[6]
       value: 
-      objectReference: {fileID: 3018706815784398307, guid: 3557c743104c26a438d70fad04fe9fe1, type: 3}
+      objectReference: {fileID: 37641520599616946, guid: 3557c743104c26a438d70fad04fe9fe1, type: 3}
     - target: {fileID: 6548323094658773686, guid: eb25a85d64d9d564abca1ce325073ad2, type: 3}
       propertyPath: spawnablePickups.Array.data[7]
       value: 
-      objectReference: {fileID: 3018706815784398307, guid: 3557c743104c26a438d70fad04fe9fe1, type: 3}
+      objectReference: {fileID: 37641520599616946, guid: 3557c743104c26a438d70fad04fe9fe1, type: 3}
     - target: {fileID: 6548323094658773687, guid: eb25a85d64d9d564abca1ce325073ad2, type: 3}
       propertyPath: m_Name
       value: SpawnPickupsOnEnemyDeath (1)

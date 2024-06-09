@@ -148,7 +148,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Pickup
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8060289197758766356, guid: e40b47231dd20834294154b297ba6043, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e40b47231dd20834294154b297ba6043, type: 3}
 --- !u!1 &2128326366000276724 stripped
 GameObject:
