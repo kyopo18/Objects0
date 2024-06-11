@@ -18,6 +18,7 @@ public abstract class Character : MonoBehaviour, IDamageable
         healthPoints = new Health(maxHealth);
         // weapon = ScriptableObject.CreateInstance<Weapon>();
         // weapon.WeaponSetup(bulletPrefab);
+        weapon = Instantiate(weapon);
         healthPoints.OnHealthChanged.AddListener(ChangedHealth);
         // rigidBody = GetComponent<Rigidbody2D>();
     }

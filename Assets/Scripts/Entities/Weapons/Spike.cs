@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spike : MonoBehaviour
+public class Spike : Bullet
 {
-    internal Character target;
-    internal int damage;
+    
+    private void Start()
+    {
+        enabled = false;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(target.tag))
+        if (collision.gameObject.CompareTag(targetTag))
         {
             //DO Damage to enemy
             collision.gameObject.GetComponent<IDamageable>().ReceiveDamage(damage);
             Debug.Log("Its hitting!");
         }
+        return;
     }
 }

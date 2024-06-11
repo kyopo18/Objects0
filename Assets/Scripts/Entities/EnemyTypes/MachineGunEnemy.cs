@@ -8,6 +8,7 @@ public class MachineGunEnemy : Enemy
 
   public override void Attack()
     {
-        weapon.ShootMe(transform, "Player");
+        RangedWeapon gun = weapon as RangedWeapon;
+        gun.ShootMe(transform, "Player");
     }
 }

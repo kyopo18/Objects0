@@ -13,10 +13,12 @@ public class Player : Character
     {
         base.Start();
         currentFireRate = OriginalFireRate;
+        
     }
     public override void Attack() // base attack
     {
-        weapon.ShootMe(transform, "Enemy"); //OTHER WORKING LINE for bullet inside player
+        RangedWeapon gun = weapon as RangedWeapon;
+        gun.ShootMe(transform, "Enemy"); //OTHER WORKING LINE for bullet inside player
         SoundManager.Instance.PlayShootSound(transform.position);
     }
     public override void Die()

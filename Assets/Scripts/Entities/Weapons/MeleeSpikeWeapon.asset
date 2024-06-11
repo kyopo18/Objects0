@@ -7,15 +7,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51948da2d60133548a51954d99adbb84, type: 3}
   m_Name: MeleeSpikeWeapon
   m_EditorClassIdentifier: 
-  weaponName: 
+  weaponName: SpikeWeapon
   icon: {fileID: 0}
-  shootDamage: 0
-  shootSpeed: 0
-  shootAccuracy: 0
-  shootDistance: 0
   damage: 1
+  bulletReference: {fileID: 0}
+  spikes:
+  - {fileID: 2809178628472662684, guid: 62abf5430582c244cb5697c10eec50c6, type: 3}
+  - {fileID: 1259377453619756356, guid: 6cf2418cea7d1064eaf28e488e4660a7, type: 3}
+  - {fileID: 8857286097551126260, guid: 6a00e0eedc168e84d8bb58fac7f3e113, type: 3}
+  - {fileID: 3409459919220557498, guid: 1dba9fef75c0c0e4f87f74f0ba3b1902, type: 3}

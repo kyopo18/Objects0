@@ -10,7 +10,8 @@ public class LaserEnemy : Enemy
     [SerializeField] LineRenderer lineRenderer;
     public override void Attack()
     {
-        weapon.ShootMe(transform, "Player");
+        RangedWeapon gun = weapon as RangedWeapon;
+        gun.ShootMe(transform, "Player");
     }
 
 
