@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Weapon", menuName = "Create Weapon (Ranged)")]
 public class RangedWeapon : Weapon
 {
     [SerializeField] private int shootSpeed;

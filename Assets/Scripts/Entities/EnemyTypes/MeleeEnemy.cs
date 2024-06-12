@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class MeleeEnemy : Enemy
 {
-    private Animator animator;
-    private MeleeSpikeWeapon spike;
+    [SerializeField] private int damage;
+    MeleeSpikeWeapon melee;
     [SerializeField] private Spike[] spikes;
 
     public MeleeEnemy()
     {
     }
-   protected override void Start()
+    protected override void Start()
     {
         base.Start();
-        spike = Instantiate(weapon as MeleeSpikeWeapon, transform);
-        spike.SetSpikes(spikes);
-        SetWeapon(spike);
-        spike.SetTarget(target.tag);
-        animator = GetComponent<Animator>();
+        melee = weapon as MeleeSpikeWeapon;
+        melee.SetupMeleeWeapon(spikes, target.tag, damage);
     }
 
     public override void Attack()
-    { 
-        spike.AttackModeOn(animator, true);
+    {
+        if (Vector2.Distance(target.transform.position, transform.position) <= Time.deltaTime * attackDistance * 235f)
+        {
+            melee.AttackModeOn();
+        }
+        else melee.AttackModeOff();
     }
     protected override void Move()
     {
@@ -39,9 +40,6 @@ public class MeleeEnemy : Enemy
         {
             rigidBody.velocity = Vector2.zero;
         }
-        while (Vector2.Distance(target.transform.position, transform.position) <= Time.deltaTime * attackDistance * 235f)
-        {
-            Attack();
-        }
+        Attack();
     }
 }

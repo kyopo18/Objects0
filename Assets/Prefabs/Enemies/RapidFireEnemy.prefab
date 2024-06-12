@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6172615378925330061}
   - component: {fileID: 4890063059160893016}
   - component: {fileID: 9200275292641904450}
-  - component: {fileID: 710603169957251543}
   - component: {fileID: 7385656078183817365}
   m_Layer: 0
   m_Name: RapidFireEnemy
@@ -125,24 +124,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &710603169957251543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6172615378925330062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02370fec301069b4894a5ae3ea887995, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  rigidBody: {fileID: 0}
-  damageTimer: 0
-  enemyShootTimer: 0
-  attackDistance: 0
-  bulletPrefab: {fileID: 0}
 --- !u!114 &7385656078183817365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,8 +137,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  weapon: {fileID: 11400000, guid: 2065e337963173c4c86e915130f171ef, type: 2}
+  maxHealth: 0
   rigidBody: {fileID: 0}
-  damageTimer: 0
-  enemyShootTimer: 0
-  attackDistance: 0
   bulletPrefab: {fileID: 0}
+  attackDistance: 0
+  target: {fileID: 0}
+  enemyCoolDown: 3

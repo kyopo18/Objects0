@@ -3,28 +3,31 @@ using System;
 using System.Data.Common;
 using UnityEngine;
 using UnityEngine.Events;
-
+[CreateAssetMenu(fileName = "New Weapon", menuName = "Create Weapon (Melee)")]
 public class MeleeSpikeWeapon : Weapon
 {
     private Spike[] spikes;
-   
-    public void AttackModeOn(Animator animator, bool on)
+    public void SetupMeleeWeapon(Spike[] spikes, string target, int damage)
     {
-        if (on == true)
+        foreach (Spike spike in spikes)
         {
-            animator.SetBool("isAttacking", true);
+            spike.SetupSpike(target, damage);
         }
-        else animator.SetBool("isAttacking", false);
-    }
-    public void SetTarget(string target)
-    {
-        foreach (var spike in spikes)
-        {
-            spike.SetUpBullet(target, damage);
-        }
-    }
-    public void SetSpikes(Spike[] spikes)
-    {
         this.spikes = spikes;
+    }
+    public void AttackModeOn()
+    {
+
+        foreach (Spike spike in spikes) 
+        {
+            spike.AttackMode();
+        }
+    }
+    public void AttackModeOff()
+    {
+        foreach(Spike spike in spikes)
+        {
+            spike.PassiveMode();
+        }
     }
 }
