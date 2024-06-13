@@ -2,8 +2,7 @@
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
-{
-    [SerializeField] private ParticleSystem particles;
+{ 
     public float bulletSpeed;
     protected string targetTag;
     protected int damage;
@@ -29,9 +28,8 @@ public class Bullet : MonoBehaviour
     {
         if(collision.gameObject.CompareTag(targetTag))
         {
-            particles.Play();
             //DO Damage to enemy
-            collision.GetComponent<IDamageable>().ReceiveDamage(damage);
+            collision.gameObject.GetComponent<IDamageable>().ReceiveDamage(damage);
             Destroy(gameObject);
             // Debug.Log("Its hitting!");
         }

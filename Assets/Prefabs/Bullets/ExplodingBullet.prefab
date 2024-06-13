@@ -94,8 +94,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6801571224810737676}
-  - component: {fileID: 8592411606427617534}
   - component: {fileID: 8374861681171336076}
+  - component: {fileID: -6324767491695325214}
   m_Layer: 0
   m_Name: ExplodingBullet
   m_TagString: Untagged
@@ -120,20 +120,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!114 &8592411606427617534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6491756308549338871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913ffc1e508a3e545b5770c584bfff0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particles: {fileID: 7264127032033871519}
-  bulletSpeed: 5
 --- !u!70 &8374861681171336076
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -144,12 +130,26 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00061514886, y: -0.0020912376}
   m_Size: {x: 0.17722093, y: 0.025873415}
   m_Direction: 1
+--- !u!114 &-6324767491695325214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6491756308549338871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d48575469758604daebdc933a22fb0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 7264127032033871519}
+  bulletSpeed: 5
 --- !u!1 &7264127032033871516
 GameObject:
   m_ObjectHideFlags: 0
