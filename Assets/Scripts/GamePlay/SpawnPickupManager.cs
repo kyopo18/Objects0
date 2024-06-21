@@ -25,7 +25,7 @@ public class SpawnPickupManager : MonoBehaviour
     }
     public void SpawnPickup(Vector3 positionToSpawn)
     {
-        if(Random.value<= chanceOfSpawn){
+        if(Random.value <= chanceOfSpawn){
             PickUp selectedPickup = spawnablePickups[Random.Range(0,spawnablePickups.Length)];
             Instantiate(selectedPickup, positionToSpawn, Quaternion.identity);
         }

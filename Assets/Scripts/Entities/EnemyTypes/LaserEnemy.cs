@@ -39,14 +39,10 @@ public class LaserEnemy : Enemy
             {
                 enemyTimer -= Time.deltaTime;
             }
-
             lineRenderer.positionCount = 2;
             lineRenderer.SetPosition(0, transform.position); // position of itself(enemy) 05172024
             lineRenderer.SetPosition(1, target.transform.position); //position of player 05172024
-
         }
-
-
     }
 
     protected override void StopTargeting()
