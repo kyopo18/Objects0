@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Player : Character
 {    
@@ -9,10 +11,18 @@ public class Player : Character
     private float currentFireRate;
     private IEnumerator BuffDuration;
     private bool hasFired;
+    [SerializeField] Image buffTimerImage;
+    public UnityEvent<int> OnHealthChanged = new UnityEvent<int>();
     protected override void Start()
     {
         base.Start();
         currentFireRate = OriginalFireRate;
+        buffTimerImage.fillAmount = 0;
+        Invoke("LateStart", Time.deltaTime * 2);
+    }
+    private void LateStart()
+    {
+        OnHealthChanged.Invoke(maxHealth);
     }
     public override void Attack() // base attack
     {
@@ -25,6 +35,12 @@ public class Player : Character
         GameManager.singleton.EndGame();
         //ScoreManager1.singleton.DisplayHighScoreOnGameOver(); // Call the method to display high score
         Destroy(gameObject);
+    }
+
+    public override void ChangedHealth(int health)
+    {
+        base.ChangedHealth(health);
+        OnHealthChanged.Invoke(health);
     }
 
     public override void ReceiveDamage()
@@ -87,9 +103,10 @@ public class Player : Character
     }
     private IEnumerator BuffTimer(float duration)
     {
-        while(duration>0)
+        buffTimerImage.fillAmount = 1; 
+        while(buffTimerImage.fillAmount > 0)
         {
-            duration -= Time.deltaTime;
+            buffTimerImage.fillAmount -= 1/duration * Time.deltaTime;
             // this is where you want to maybe add a UI element
             yield return null;
         }
