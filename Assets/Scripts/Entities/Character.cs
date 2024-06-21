@@ -22,7 +22,7 @@ public abstract class Character : MonoBehaviour, IDamageable
         healthPoints.OnHealthChanged.AddListener(ChangedHealth);
         // rigidBody = GetComponent<Rigidbody2D>();
     }
-    public void ChangedHealth(int health)
+    public virtual void ChangedHealth(int health)
     {
         // Debug.Log("LIFE HAS CHANGED TO " + health);
         if (health <= 0)
