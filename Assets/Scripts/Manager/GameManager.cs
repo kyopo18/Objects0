@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class GameManager : MonoBehaviour
 {
+    public UnityEvent OnEndGame;
     public static GameManager singleton;
 
     public ScoreManager1 scoreManager;
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
         //StopCoroutine(SpawnEnemy());
         StopCoroutine(coroutine);
         scoreManager.RegisterHighScore();
+        OnEndGame?.Invoke();
     }
     public void StartSpawningEnemy()
     {
